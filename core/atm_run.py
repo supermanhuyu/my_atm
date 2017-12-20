@@ -31,16 +31,16 @@ def main():
     先登录，返回true的时候进入主菜单
     :return:
     """
-
+    username = "superman"
     result = terminal_op.login()
     if result :
         while True:
             print('welcome')
             choice = input('plz input your choice : ')
-            if choice == "q"  :
+            if choice == "q" :
                 logout()
-            elif choice :
-                menu[choice](username)
+            elif choice.isdigit() == True and int(choice) < 7  :
+                menu[int(choice)](username)
             else :
                 pass
     else :
