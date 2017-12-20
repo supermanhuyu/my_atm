@@ -9,6 +9,21 @@ import sys
 import prettytable
 import time
 from core import terminal_op
+from core import terminal_repay,terminal_show_record,terminal_transfers,terminal_view_credit,\
+    terminal_withdraw,terminal_discover_bills,terminal_bill_rate
+
+menu = [terminal_view_credit.view_credit,
+        terminal_show_record.show_record,
+        terminal_repay.repay,
+        terminal_withdraw.withdraw,
+        terminal_transfers.transfers,
+        terminal_discover_bills.inqure_bills,
+        terminal_bill_rate.inqure_rates,
+        logout]
+
+def logout():
+    exit('系统推出')
+
 
 def main():
     """
@@ -21,7 +36,12 @@ def main():
         while True:
             print('welcome')
             choice = input('plz input your choice : ')
-
+            if choice == "q"  :
+                logout()
+            elif choice :
+                menu[choice](username)
+            else :
+                pass
     else :
         pass
 

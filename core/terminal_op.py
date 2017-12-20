@@ -6,4 +6,4 @@
 # @Blog    ：
 
 def login() :
-    pass
+    return True
