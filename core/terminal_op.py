@@ -7,6 +7,7 @@
 
 from core import data_op
 from core import pass_handler
+from core.logger import *
 
 tip = {'user_name': None,'login_state':False}
 
@@ -22,6 +23,7 @@ def login() :
         print('{}账户错误,请重新输入..'.format(user_name))
     elif user_data[user_name][0] == 0 :
         print('您的账户{}已被冻结,请联系管理员'.format(user_name))
+        log_access.warning('已冻结用户{}尝试登陆'.format(user_name))
         return False
     else :
         i = 0
@@ -29,6 +31,7 @@ def login() :
             if i == 3 :
                 freeze_count(user_name)
                 print('您的账户{}已被冻结,请联系管理员'.format(user_name))
+                log_access.warning('用户{}被冻结'.format(user_name))
                 return False
             pwd_input= input('请输入{}的密码：'.format(user_name))
             pwd = pass_handler.md5_pwd(pwd_input)
@@ -36,6 +39,7 @@ def login() :
                 tip['user_name'] = user_name
                 tip['login_state'] = True
                 print('登录成功!')
+                log_access.access.info('用户{}登录成功'.format(user_name))
                 return  True
             else :
                 print('密码输入有误,请重新输入.')

@@ -7,4 +7,5 @@
 
 
 def view_credit(username):
+
     print("view_credit"+"_"+username)

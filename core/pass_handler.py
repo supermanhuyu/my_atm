@@ -16,9 +16,9 @@ def md5_pwd(pwd):
     """
     hash = hashlib.md5(bytes('odlboy',encoding='utf8'))
     hash.update(bytes(pwd,encoding='utf8'))
-    # result hash.hexdigest()
-    result = hash.hexdigest()
-    return result
+    return hash.hexdigest()
+    # result = hash.hexdigest()
+    # return result
 
 
 
