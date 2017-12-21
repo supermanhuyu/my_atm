@@ -10,11 +10,11 @@ import json
 
 def load():
     """
-    读 atm 用户数据库    :return:.decode("utf-8","ignore"),encoding='gbk' .read().decode('gb18030','ignore')
+    读 atm 用户数据库   ,encoding="utf-8"
     """
     # with open("../db/atm_cart_db.json", "r") as f:
     #     print(f)
-    user_data=json.load(open('../db/atm_cart_db.json','r',encoding="utf-8"))
+    user_data=json.load(open('../db/atm_cart_db.json','r'))
     return user_data
 
 def flush_db(user_data) :

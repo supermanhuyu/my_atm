@@ -10,6 +10,7 @@ import prettytable
 import time
 sys.path.append('..')
 from core import terminal_op
+from core.terminal_op import *
 from core import terminal_repay,terminal_show_record,terminal_transfers,terminal_view_credit,\
     terminal_withdraw,terminal_discover_bills,terminal_bill_rate
 
@@ -25,14 +26,12 @@ menu = [terminal_view_credit.view_credit,
         terminal_bill_rate.inqure_rates,
         logout]
 
-
-
 def main():
     """
     先登录，返回true的时候进入主菜单
     :return:
     """
-    username = "superman"
+    # username = "superman"
     result = terminal_op.login()
     if result :
         row = prettytable.PrettyTable()
@@ -46,7 +45,7 @@ def main():
             if choice == "q" :
                 logout()
             elif choice.isdigit() == True and int(choice) < 7  :
-                menu[int(choice)](username)
+                menu[int(choice)](tip['user_name'])
             else :
                 print('\033[31;1m您的输入有误，请重新输入\033[0m')
     else :
