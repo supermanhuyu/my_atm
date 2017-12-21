@@ -39,7 +39,7 @@ def login() :
                 tip['user_name'] = user_name
                 tip['login_state'] = True
                 print('登录成功!')
-                log_access.access.info('用户{}登录成功'.format(user_name))
+                log_access.info('用户{}登录成功'.format(user_name))
                 return  True
             else :
                 print('密码输入有误,请重新输入.')

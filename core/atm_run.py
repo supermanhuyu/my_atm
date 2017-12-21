@@ -38,7 +38,7 @@ def main():
         row = prettytable.PrettyTable()
         row.field_names = ['查看可用额度','查看消费记录','还款','提现','转账','查询本月账单','还款逾期查询','退出']
         row.add_row([0,1,2,3,4,5,6,'q&quit'])
-        print('\033[31;1m欢迎来到superman支行\033[0m'.center(93, '*'))
+        print('\033[31;1m欢迎来到superman支行\033[0m'.center(94, '*'))
         while True:
             # print("\n")
             print(row)
