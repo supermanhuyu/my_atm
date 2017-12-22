@@ -22,8 +22,8 @@ menu = [terminal_view_credit.view_credit,
         terminal_repay.repay,
         terminal_withdraw.withdraw,
         terminal_transfers.transfers,
-        terminal_discover_bills.inqure_bills,
-        terminal_bill_rate.inqure_rates,
+        terminal_discover_bills.inquire_bills,
+        terminal_bill_rate.inquire_rates,
         logout]
 
 def main():
