@@ -14,7 +14,7 @@ def load():
     """
     # with open("../db/atm_cart_db.json", "r") as f:
     #     print(f)
-    user_data=json.load(open('../db/atm_cart_db.json','r'))
+    user_data=json.load(open('../db/atm_cart_db.json','r',encoding='gbk'))
     return user_data
 
 def flush_db(user_data) :
@@ -23,5 +23,5 @@ def flush_db(user_data) :
     :param args:  新的用户数据
     :return:  True
     """
-    json.dump(user_data,open("../db/atm_cart_db.json","w"),ensure_ascii=False,indent=1)
+    json.dump(user_data,open("../db/atm_cart_db.json","w",encoding='gbk'),ensure_ascii=False,indent=1)
     return True

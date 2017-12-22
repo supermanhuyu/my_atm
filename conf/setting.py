@@ -9,11 +9,15 @@
 配置文件,配置交易费率字典,消费记录函数,以及日志的文件和等级等信息
 """
 
-import sys,time,logging,datetime
+import sys,time,logging\
+# import datetime
 sys.path.append('..')
-from core import data_op,logger
+# from core import data_op,logger
 
 date_time = time.strftime('%Y-%m-%d %H:%M:%S')
+
+#利息计算
+trans_rate={'提现':0.05,'转账':0.05,'还款':0,'支付':0,'收款':0}
 
 LOG_LEVEL = logging.DEBUG
 LOG_TYPE = {'access':'access.log','trans':'trans.log','admin':'admin.log'}

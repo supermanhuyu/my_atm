@@ -1,6 +1,4 @@
 
-*.log
-log/
 *.pyc
 __pycache__
 core/__pycache__/
